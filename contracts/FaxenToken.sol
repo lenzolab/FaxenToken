@@ -6,8 +6,13 @@ import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
 import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract MyToken is ERC20, ERC20Burnable, Pausable, Ownable {
-    constructor() ERC20("MyToken", "MTK") {}
+// 100000000000000000000    = 1000FAX
+contract FaxenToken is ERC20, ERC20Burnable, Pausable, Ownable  {
+     uint256 private immutable _cap;
+    
+    constructor() ERC20("FaxenToken", "FAX") {
+        _cap = 10**27;
+    }
 
     function pause() public onlyOwner {
         _pause();
@@ -18,6 +23,7 @@ contract MyToken is ERC20, ERC20Burnable, Pausable, Ownable {
     }
 
     function mint(address to, uint256 amount) public onlyOwner {
+        require(ERC20.totalSupply() + amount <= cap(), "ERC20: cap exceeded");
         _mint(to, amount);
     }
 
@@ -27,5 +33,19 @@ contract MyToken is ERC20, ERC20Burnable, Pausable, Ownable {
         override
     {
         super._beforeTokenTransfer(from, to, amount);
+    }
+
+    /**
+     * @dev Returns the cap on the token's total supply.
+     */
+    function cap() public view virtual returns (uint256) {
+        return _cap;
+    }
+
+    /**
+     * @dev See {IERC20-totalSupply}.
+     */
+    function maxSupply() public view virtual returns (uint256) {
+        return cap();
     }
 }
