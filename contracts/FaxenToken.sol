@@ -7,6 +7,7 @@ import "@openzeppelin/contracts/security/Pausable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 // 100000000000000000000    = 1000FAX
+
 contract FaxenToken is ERC20, ERC20Burnable, Pausable, Ownable  {
      uint256 private immutable _cap;
     

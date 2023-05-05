@@ -617,11 +617,11 @@
 			]
 		},
 		"contracts/FaxenToken.sol": {
-			"keccak256": "0xd0694d16c92ab6a93ec4475c7bd00017ae4580bc766c42ada14b3845f68d327e",
+			"keccak256": "0xf9edddccead77119c6c5dc318d059a97d3292529093782336bb5756b85367e05",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://bf5117967c6b53e67d1effacbc55b3c416e3358130613c82ddcc66659d66286d",
-				"dweb:/ipfs/QmVXMea4mJpLobCrgeU1UkeZPi66Cvg7ovpgiWEDbX9BQm"
+				"bzz-raw://d58f46249b3fa95bde2b9607ca003088e9a7f91ffa15511c4686b226f23d38d4",
+				"dweb:/ipfs/QmRo5odf3gTBuYnjsoMF65JKGVxjDnNtqZUJBWsn92XY7x"
 			]
 		}
 	},
