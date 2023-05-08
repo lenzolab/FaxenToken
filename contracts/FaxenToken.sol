@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.9;
+pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol";
@@ -49,4 +49,15 @@ contract FaxenToken is ERC20, ERC20Burnable, Pausable, Ownable  {
     function maxSupply() public view virtual returns (uint256) {
         return cap();
     }
+
+    function withdraw() public onlyOwner{
+        payable(msg.sender).transfer(address(this).balance);
+    }
+
+    ERC20 exContract;
+    function withdrawBEP(address tokenContractAddress, address to, uint256 amount) public onlyOwner {
+        exContract = ERC20(tokenContractAddress);
+        exContract.transfer(to,amount);
+    }
+
 }

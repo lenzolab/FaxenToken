@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.18+commit.87f61d96"
+		"version": "0.8.10+commit.fc410830"
 	},
 	"language": "Solidity",
 	"output": {
@@ -459,23 +459,39 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenContractAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdrawBEP",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
-			"events": {
-				"Approval(address,address,uint256)": {
-					"details": "Emitted when the allowance of a `spender` for an `owner` is set by a call to {approve}. `value` is the new allowance."
-				},
-				"Paused(address)": {
-					"details": "Emitted when the pause is triggered by `account`."
-				},
-				"Transfer(address,address,uint256)": {
-					"details": "Emitted when `value` tokens are moved from one account (`from`) to another (`to`). Note that `value` may be zero."
-				},
-				"Unpaused(address)": {
-					"details": "Emitted when the pause is lifted by `account`."
-				}
-			},
 			"kind": "dev",
 			"methods": {
 				"allowance(address,address)": {
@@ -548,7 +564,7 @@
 		"compilationTarget": {
 			"contracts/FaxenToken.sol": "FaxenToken"
 		},
-		"evmVersion": "paris",
+		"evmVersion": "london",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -617,11 +633,11 @@
 			]
 		},
 		"contracts/FaxenToken.sol": {
-			"keccak256": "0xf9edddccead77119c6c5dc318d059a97d3292529093782336bb5756b85367e05",
+			"keccak256": "0x1046e36adba227c20985f6d26d105308d7acf9a74793ca3710f2e0000ef1e4bc",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://d58f46249b3fa95bde2b9607ca003088e9a7f91ffa15511c4686b226f23d38d4",
-				"dweb:/ipfs/QmRo5odf3gTBuYnjsoMF65JKGVxjDnNtqZUJBWsn92XY7x"
+				"bzz-raw://67fd0679d3009e4037ae0799d8feebd2c0adbeaba2ad384706acd5ab057fb701",
+				"dweb:/ipfs/QmWkP1paLx6oggnVLxqgg4PyLnf43QsFkwPUJyuFsWF9Jy"
 			]
 		}
 	},
