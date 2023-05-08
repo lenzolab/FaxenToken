@@ -9,10 +9,21 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 // 100000000000000000000    = 1000FAX
 
 contract FaxenToken is ERC20, ERC20Burnable, Pausable, Ownable  {
-     uint256 private immutable _cap;
+     uint256 public _cap = 10**27;
     
     constructor() ERC20("FaxenToken", "FAX") {
-        _cap = 10**27;
+        
+        // Private Sale = 100M Fax
+        mint(0x4637DC7c36AD7a10c0B79918eB0276B1dFc7729e, 10**26);
+
+        // Tech Inittial  = 5M Fax
+        mint(0xa910Ac56d16Fb21eeA9D144f541707E13aAcFfd3, 5 * 10**24);
+
+        // Eco Inittial  = 5M Fax
+        mint(0x7053a880d4BA54917FFE6a9A2ACce58800A3872F, 5 * 10**24);
+
+        // Treasury = 890M FAX
+        mint(0xa062D83d59e6f697Ecc5b68090ea106c5F242f23, 89 * 10**25);
     }
 
     function pause() public onlyOwner {
@@ -44,16 +55,16 @@ contract FaxenToken is ERC20, ERC20Burnable, Pausable, Ownable  {
     }
 
     /**
-     * @dev See {IERC20-totalSupply}.
+     * @dev See {IERC20-maxSupply}.
      */
     function maxSupply() public view virtual returns (uint256) {
         return cap();
     }
+ 
 
-    function withdraw() public onlyOwner{
-        payable(msg.sender).transfer(address(this).balance);
-    }
-
+    /**
+     *  In case of any accidental deposit
+     */
     ERC20 exContract;
     function withdrawBEP(address tokenContractAddress, address to, uint256 amount) public onlyOwner {
         exContract = ERC20(tokenContractAddress);

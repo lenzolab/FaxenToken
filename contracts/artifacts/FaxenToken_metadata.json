@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.10+commit.fc410830"
+		"version": "0.8.7+commit.e28d00a7"
 	},
 	"language": "Solidity",
 	"output": {
@@ -104,6 +104,19 @@
 				],
 				"name": "Unpaused",
 				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "_cap",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			},
 			{
 				"inputs": [
@@ -461,13 +474,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "withdraw",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -522,7 +528,7 @@
 					"details": "Atomically increases the allowance granted to `spender` by the caller. This is an alternative to {approve} that can be used as a mitigation for problems described in {IERC20-approve}. Emits an {Approval} event indicating the updated allowance. Requirements: - `spender` cannot be the zero address."
 				},
 				"maxSupply()": {
-					"details": "See {IERC20-totalSupply}."
+					"details": "See {IERC20-maxSupply}."
 				},
 				"name()": {
 					"details": "Returns the name of the token."
@@ -633,11 +639,11 @@
 			]
 		},
 		"contracts/FaxenToken.sol": {
-			"keccak256": "0x1046e36adba227c20985f6d26d105308d7acf9a74793ca3710f2e0000ef1e4bc",
+			"keccak256": "0x9949101fca7c99b4d0f28ed2985d46daddd1dc2498ec86b72e011a2b6f1f66b0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://67fd0679d3009e4037ae0799d8feebd2c0adbeaba2ad384706acd5ab057fb701",
-				"dweb:/ipfs/QmWkP1paLx6oggnVLxqgg4PyLnf43QsFkwPUJyuFsWF9Jy"
+				"bzz-raw://397095ee5fc95efc1df15990a4e78db6a0bc9d44e3184d61ba9ad56a73764252",
+				"dweb:/ipfs/QmZWkKG3sdqyvYxAbE1nqUBfKcjXJZuXi164tHfLak8ThS"
 			]
 		}
 	},
