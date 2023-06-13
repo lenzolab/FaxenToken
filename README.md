@@ -12,11 +12,7 @@ The smart contract is written in Solidity and still is under development.
 To use the FAX token, you can interact with the smart contract on the BSC blockchain using any compatible wallet or dApp. The official contract address will be accessible on Faxen.io.
 
 
-## Development
-To contribute to the development of the FAX token smart contract, you can clone this repository and make your changes. Please ensure that all changes are thoroughly tested and reviewed before submitting a pull request.
-
-
 ## Security
 The security of the FAX token smart contract is of utmost importance to us. We are conducting extensive testing and auditing to ensure that the contract is secure and free from vulnerabilities.
 
-If you discover any potential security issues with the contract, please contact us immediately at [insert contact email].
+If you discover any potential security issues with the contract, please contact us immediately at support@faxen.io .
